@@ -1,0 +1,73 @@
+{
+  "repo": "apex-mesh-gossip-gate",
+  "language": "SQL",
+  "category": "Distributed systems",
+  "goal": "Implement an SQL distributed systems project for gossip stream reduction, using windowed input fixtures and late-data behavior checks.",
+  "review_model": {
+    "terms": [
+      "quorum health",
+      "lease drift",
+      "replica lag",
+      "membership churn"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "quorum health",
+      "signal": 60,
+      "slack": 35,
+      "drag": 26,
+      "confidence": 67,
+      "score": 144,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "lease drift",
+      "signal": 45,
+      "slack": 36,
+      "drag": 28,
+      "confidence": 88,
+      "score": 130,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "replica lag",
+      "signal": 82,
+      "slack": 51,
+      "drag": 31,
+      "confidence": 68,
+      "score": 190,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "membership churn",
+      "signal": 84,
+      "slack": 26,
+      "drag": 24,
+      "confidence": 75,
+      "score": 197,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "quorum health",
+      "signal": 92,
+      "slack": 40,
+      "drag": 15,
+      "confidence": 77,
+      "score": 256,
+      "lane": "ship"
+    }
+  ]
+}
