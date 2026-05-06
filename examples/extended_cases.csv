@@ -1,0 +1,7 @@
+name,demand,capacity,latency,risk,weight,score,decision,reason
+baseline,68,85,19,12,6,165,accept,distributed systems baseline scenario keeps the local fixture within the modeled acceptance band
+pressure,79,69,25,18,11,160,accept,distributed systems pressure scenario keeps the local fixture within the modeled acceptance band
+surge,108,95,20,17,11,258,accept,distributed systems surge scenario keeps the local fixture within the modeled acceptance band
+degraded,70,57,32,27,5,50,review,distributed systems degraded scenario exercises the review path for bounded failure handling
+recovery,83,105,17,9,9,246,accept,distributed systems recovery scenario keeps the local fixture within the modeled acceptance band
+boundary,70,78,25,14,10,162,accept,distributed systems boundary scenario keeps the local fixture within the modeled acceptance band

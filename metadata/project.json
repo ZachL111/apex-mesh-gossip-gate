@@ -1,0 +1,32 @@
+{
+  "index": 598,
+  "phase": 2,
+  "batch": 67,
+  "name": "apex-mesh-gossip-gate",
+  "planned_name": "apex-mesh-gossip-gate",
+  "language": "SQL",
+  "category": "Distributed systems",
+  "goal": "Implement an SQL distributed systems project for gossip stream reduction, using windowed input fixtures and late-data behavior checks.",
+  "repository_url": "https://github.com/ZachL111/apex-mesh-gossip-gate",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 152,
+    "risk_penalty": 4,
+    "latency_penalty": 2,
+    "weight_bonus": 5,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
